@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Card_Guesser_3000
 {
@@ -23,6 +24,7 @@ namespace Card_Guesser_3000
         private void inputBet_TextChanged(object sender, EventArgs e)
         {
             //display bet, catch format exceptions
+            error1.Clear();
             try
             {
                 bet = Convert.ToInt32(inputBet.Text);
@@ -39,16 +41,31 @@ namespace Card_Guesser_3000
         private void btnBet_Click(object sender, EventArgs e)
         {
             //finish bet
-            lblWager.Text = "Wager: " + bet.ToString("c");
-            betDialog.Visible = false;
-        }
+            if (bet <= 0)
+            {
+                error1.SetError(inputBet, "That is not a valid bet!");
+            }
 
+            else
+            {
+                lblWager.Text = "Wager: " + bet.ToString("c");
+                betDialog.Visible = false;
+            }
+        }
+        
         private void lblPlay_Click(object sender, EventArgs e)
         {
+            //start timer
+            timer1.Start();
             //flip cards over
             card1.Image = Properties.Resources.Card_Back;
             card2.Image = Properties.Resources.Card_Back;
             card3.Image = Properties.Resources.Card_Back;
+
+            //work on animation here 
+            //int startTime = Convert.ToInt32(DateTime.Now);
+            ///Debug.WriteLine(startTime);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

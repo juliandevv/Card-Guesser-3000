@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.betDialog = new System.Windows.Forms.GroupBox();
@@ -37,15 +38,18 @@
             this.lblBalance1 = new System.Windows.Forms.Label();
             this.lblBalance2 = new System.Windows.Forms.Label();
             this.lblWager = new System.Windows.Forms.Label();
+            this.lblPlay = new System.Windows.Forms.Label();
             this.card3 = new System.Windows.Forms.PictureBox();
             this.card2 = new System.Windows.Forms.PictureBox();
             this.card1 = new System.Windows.Forms.PictureBox();
-            this.lblPlay = new System.Windows.Forms.Label();
+            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.betDialog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.card3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,6 +145,19 @@
             this.lblWager.TabIndex = 4;
             this.lblWager.Text = "Wager: 0.00$";
             // 
+            // lblPlay
+            // 
+            this.lblPlay.AutoSize = true;
+            this.lblPlay.BackColor = System.Drawing.Color.White;
+            this.lblPlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlay.Location = new System.Drawing.Point(351, 76);
+            this.lblPlay.Name = "lblPlay";
+            this.lblPlay.Size = new System.Drawing.Size(63, 28);
+            this.lblPlay.TabIndex = 6;
+            this.lblPlay.Text = "Play!";
+            this.lblPlay.Click += new System.EventHandler(this.lblPlay_Click);
+            // 
             // card3
             // 
             this.card3.Image = global::Card_Guesser_3000.Properties.Resources._1200px_Playing_card_spade_3_svg;
@@ -171,18 +188,10 @@
             this.card1.TabIndex = 0;
             this.card1.TabStop = false;
             // 
-            // lblPlay
+            // error1
             // 
-            this.lblPlay.AutoSize = true;
-            this.lblPlay.BackColor = System.Drawing.Color.White;
-            this.lblPlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlay.Location = new System.Drawing.Point(351, 76);
-            this.lblPlay.Name = "lblPlay";
-            this.lblPlay.Size = new System.Drawing.Size(63, 28);
-            this.lblPlay.TabIndex = 6;
-            this.lblPlay.Text = "Play!";
-            this.lblPlay.Click += new System.EventHandler(this.lblPlay_Click);
+            this.error1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -203,6 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.card3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +233,8 @@
         private System.Windows.Forms.Label lblBalance2;
         private System.Windows.Forms.Label lblWager;
         private System.Windows.Forms.Label lblPlay;
+        private System.Windows.Forms.ErrorProvider error1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
