@@ -21,5 +21,20 @@ namespace Card_Guesser_3000
         {
             this.Dispose();
         }
+
+        private void btnStart_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnStart_MouseLeave(object sender, EventArgs e)
+        {
+            btnStart.BackColor = Color.SeaShell;
+        }
+
+        private void btnStart_MouseEnter(object sender, EventArgs e)
+        {
+            btnStart.BackColor = Color.Salmon;
+        }
     }
 }
